@@ -10,9 +10,9 @@
 
 Before configuring the plugin, you'll need to set up your Grateful account and create an integration:
 
-1. **Create Account**: Sign up for a Grateful account at [grateful.me](https://grateful.me)
+1. **Create Account**: Sign up for a Grateful account at [grateful.me](https://merchant.grateful.me)
 2. **Access Dashboard**: Log in to your Grateful dashboard
-3. **Create Integration**: Navigate to [Integrations](https://grateful.me/merchant/settings/integrations) and create a new integration for your WooCommerce store. Integration type should be Online. You'll need to configure the notification URL later (provided in WooCommerce settings)
+3. **Create Integration**: Navigate to [Integrations](https://merchant.grateful.me/settings/integrations) and create a new integration for your WooCommerce store. Integration type should be Online. You'll need to configure the notification URL later (provided in WooCommerce settings)
 4. **Get API Credentials**: Copy your API key and secret key from the integration settings
 
 Keep your API credentials secure and ready for the next configuration step.
@@ -39,7 +39,7 @@ Keep your API credentials secure and ready for the next configuration step.
 
 The plugin integrates with the Grateful.me API:
 
-- **Endpoint**: `https://www.grateful.me/api/payments/new`
+- **Endpoint**: `https://merchant.grateful.me/api/payments/new`
 - **Method**: POST
 - **Headers**: 
   - `Content-Type: application/json`
@@ -59,7 +59,7 @@ The plugin integrates with the Grateful.me API:
 ```json
 {
   "id": "payment_id",
-  "url": "https://grateful.me/payment/...",
+  "url": "https://merchant.grateful.me/payment/...",
   "status": "pending"
 }
 ```

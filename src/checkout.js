@@ -13,7 +13,7 @@ import './checkout.scss';
 
 const settings = getSetting('grateful_payment_data', {});
 
-const defaultLabel = __('Grateful Payment', 'grateful-payments');
+const defaultLabel = __('Grateful - Stablecoins', 'grateful-payments');
 
 const label = decodeEntities(settings.title) || defaultLabel;
 

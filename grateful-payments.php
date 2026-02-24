@@ -4,7 +4,7 @@
  * Version: 0.1.3
  * Description: Stablecoin payment gateway
  * Author: Grateful
- * Author URI: https://grateful.me
+ * Author URI: https://merchant.grateful.me
  * Text Domain: grateful
  * Domain Path: /languages
  *
