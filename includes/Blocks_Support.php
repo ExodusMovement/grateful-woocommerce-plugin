@@ -98,7 +98,7 @@ class Blocks_Support extends AbstractPaymentMethodType {
 		$gateway = new Grateful_Payment_Gateway();
 
 		return array(
-			'title'       => $gateway->get_option( 'title', __( 'Grateful Payment', 'grateful-payments' ) ),
+			'title'       => $gateway->get_option( 'title', __( 'Grateful - Stablecoins', 'grateful-payments' ) ),
 			'description' => $gateway->get_option( 'description', __( 'Take a moment to express gratitude before completing your purchase.', 'grateful-payments' ) ),
 			'supports'    => $gateway->supports ?? array( 'products' ),
 		);

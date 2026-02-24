@@ -33,9 +33,9 @@ class Grateful_Payment_Gateway extends \WC_Payment_Gateway {
 	 */
 	public function __construct() {
 		$this->id                 = 'grateful_payment';
-		$this->icon 							= apply_filters( 'woocommerce_gateway_icon', 'https://www.grateful.me/apple-touch-icon.png' );
+		$this->icon 							= apply_filters( 'woocommerce_gateway_icon', 'https://merchant.grateful.me/favicon-32x32.png' );
 		$this->has_fields         = false;
-		$this->method_title       = __( 'Grateful Payment', 'grateful-payments' );
+		$this->method_title       = __( 'Grateful - Stablecoins', 'grateful-payments' );
 		$this->method_description = __( 'A payment gateway that encourages gratitude before processing payment.', 'grateful-payments' );
 		$this->supports           = array(
 			'products',
@@ -46,7 +46,7 @@ class Grateful_Payment_Gateway extends \WC_Payment_Gateway {
 		$this->init_settings();
 
 		$this->enabled    = $this->get_option( 'enabled', 'yes' );
-		$this->title = 'Grateful Payment';
+		$this->title = 'Grateful - Stablecoins';
   	$this->description = 'Take a moment to express gratitude before completing your purchase. This practice helps cultivate mindfulness and appreciation.';
 		$this->api_key    = $this->get_option( 'api_key' );
 		$this->secret_key = $this->get_option( 'secret_key' );
@@ -310,7 +310,7 @@ class Grateful_Payment_Gateway extends \WC_Payment_Gateway {
 					return false;
 			}
 			
-			$status_url = 'https://www.grateful.me/api/payments/' . $payment_id . '/status';
+			$status_url = 'https://merchant.grateful.me/api/payments/' . $payment_id . '/status';
 			
 			$response = wp_remote_get($status_url, array(
 					'headers' => array(
@@ -400,7 +400,7 @@ class Grateful_Payment_Gateway extends \WC_Payment_Gateway {
 				'callbackUrl' => $order_data['callback_url'],
 		);
 		
-		$response = wp_remote_post('https://www.grateful.me/api/payments/new', array(
+		$response = wp_remote_post('https://merchant.grateful.me/api/payments/new', array(
 				'headers' => array(
 						'Content-Type' => 'application/json',
 						'x-api-key' => $api_key,
