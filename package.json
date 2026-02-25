@@ -1,6 +1,6 @@
 {
 	"name": "grateful-payments",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"author": "Grateful",
 	"license": "GPL-3.0+",
 	"main": "build/checkout.js",
@@ -16,13 +16,13 @@
 	},
 	"dependencies": {
 		"@woocommerce/components": "^10.3.0",
-		"@wordpress/hooks": "^4.26.0",
-		"@wordpress/i18n": "^5.26.0"
+		"@wordpress/hooks": "^4.40.0",
+		"@wordpress/i18n": "^6.13.0"
 	},
 	"devDependencies": {
 		"@woocommerce/dependency-extraction-webpack-plugin": "^2.2.0",
 		"@woocommerce/eslint-plugin": "^2.2.0",
-		"@wordpress/prettier-config": "^4.26.0",
-		"@wordpress/scripts": "^24.6.0"
+		"@wordpress/prettier-config": "^4.40.0",
+		"@wordpress/scripts": "^31.5.0"
 	}
 }

@@ -2,6 +2,7 @@
 	"phpVersion": null,
 	"core": null,
 	"plugins": ["https://downloads.wordpress.org/plugin/woocommerce.zip", "."],
+	"testsEnvironment": false,
 	"config": {
 		"JETPACK_AUTOLOAD_DEV": true,
 		"WP_DEBUG": true,
