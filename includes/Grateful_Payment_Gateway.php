@@ -172,14 +172,15 @@ class Grateful_Payment_Gateway extends \WC_Payment_Gateway {
 			exit;
 		}
 
-		// Verify webhook signature if available.
-		$signature = $_SERVER['HTTP_X_GRATEFUL_SIGNATURE'] ?? null;
-		if ( $signature && $this->secret_key ) {
-			$expected_signature = hash_hmac( 'sha256', $body, $this->secret_key );
-			if ( ! hash_equals( $expected_signature, $signature ) ) {
-				http_response_code( 401 );
-				exit;
-			}
+		if ( ! $this->secret_key ) {
+			http_response_code( 500 );
+			exit;
+		}
+		$signature          = $_SERVER['HTTP_X_GRATEFUL_SIGNATURE'] ?? '';
+		$expected_signature = hash_hmac( 'sha256', $body, $this->secret_key );
+		if ( ! hash_equals( $expected_signature, $signature ) ) {
+			http_response_code( 401 );
+			exit;
 		}
 
 		// Extract order ID from external reference.
