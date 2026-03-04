@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Grateful
- * Version: 0.1.3
+ * Version: 0.1.4
  * Description: Stablecoin payment gateway
  * Author: Grateful
  * Author URI: https://merchant.grateful.me
