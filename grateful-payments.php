@@ -20,7 +20,22 @@ if ( ! defined( 'MAIN_PLUGIN_FILE' ) ) {
 	define( 'MAIN_PLUGIN_FILE', __FILE__ );
 }
 
-require_once plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
+// Autoload plugin classes (PSR-4: GratefulPayments\ => includes/)
+spl_autoload_register( function( $class ) {
+	$prefix   = 'GratefulPayments\\';
+	$base_dir = plugin_dir_path( __FILE__ ) . 'includes/';
+
+	if ( strncmp( $prefix, $class, strlen( $prefix ) ) !== 0 ) {
+		return;
+	}
+
+	$relative_class = substr( $class, strlen( $prefix ) );
+	$file           = $base_dir . str_replace( '\\', '/', $relative_class ) . '.php';
+
+	if ( file_exists( $file ) ) {
+		require $file;
+	}
+} );
 
 use GratefulPayments\Admin\Setup;
 use GratefulPayments\Grateful_Payment_Gateway;
