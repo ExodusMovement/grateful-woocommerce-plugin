@@ -4,6 +4,14 @@
 	"author": "Grateful",
 	"license": "GPL-3.0+",
 	"main": "build/checkout.js",
+	"files": [
+		"build/**",
+		"includes/**",
+		"languages/**",
+		"vendor/**",
+		"block.json",
+		"grateful-payments.php"
+	],
 	"scripts": {
 		"build": "wp-scripts build",
 		"format": "wp-scripts format",
