@@ -33,7 +33,7 @@ class Grateful_Payment_Gateway extends \WC_Payment_Gateway {
 	 */
 	public function __construct() {
 		$this->id                 = 'grateful_payment';
-		$this->icon 							= apply_filters( 'woocommerce_gateway_icon', 'https://merchant.grateful.me/favicon-32x32.png' );
+		$this->icon 							= apply_filters( 'woocommerce_gateway_icon', plugins_url( 'assets/icon.png', MAIN_PLUGIN_FILE ) );
 		$this->has_fields         = false;
 		$this->method_title       = __( 'Grateful - Stablecoins', 'grateful-payments' );
 		$this->method_description = __( 'Accept stablecoins directly, with no fees or intermediaries.', 'grateful-payments' );
